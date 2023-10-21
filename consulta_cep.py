@@ -18,12 +18,22 @@ class ConsultaCep:
         return "{}-{}".format(self.cep[:5], self.cep[5:])
     
     def __str__(self) -> str:
-        return self.ConsultaApi
+        return self.ConsultaApi()
+        
     
     def ConsultaApi(self):
-        url = "viacep.com.br/ws/{}/json/".format(self.cep)
+        url = "https://viacep.com.br/ws/{}/json/".format(self.cep)
         r = requests.get(url)
-        return r.json()
+        dados = r.json()
+        return (
+            dados['bairro'],
+            dados['localidade'],
+            dados['uf']
+        )
+        
+       
+        
+    
 
 
 

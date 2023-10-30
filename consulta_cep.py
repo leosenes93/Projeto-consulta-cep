@@ -31,7 +31,7 @@ class ConsultaCep:
             dados['uf']
         )
     
-#Comentário, teste GIT
+#Comentário, teste GIT 2
         
        
         
